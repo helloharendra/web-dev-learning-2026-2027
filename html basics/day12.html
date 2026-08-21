@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#about">About</a> |
+        <a href="#contact">Contact</a>
+    </nav>
+        
+<canvas id="myCanvas" width="400" height="100" style="border:1px solid black;"></canvas>
+
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="black" fill="red" />
+</svg>
+
+<template id="" clss="">
+  <p>This content is hidden until used.</p>
+</template>
+<slot></slot>
+<blockquote cite="https://www.example.com/article">
+    <p>The only way to do great work is to love what you do.</p>
+</blockquote>
+<q>
+
+<input type="number" required>
+<button type="submit">Submit</button>
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    <source src="audio.ogg" type="audio/ogg">
+    Your browser does not support audio elements.
+</audio>
+<video width="320" height="240" controls poster="thumbnail.jpg">
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+    Your browser does not support video elements.
+</video>
+    <strike>This text is struck through.</strike>
+    <strikethrough>This text is also struck through.</strikethrough>
+    <! Geolocation API >
+<button onclick="getLocation()">Get Location</button>
+<p id="location"></p>
+<script>
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+}
+function showPosition(position) {
+    document.getElementById("location").innerHTML = 
+        "Latitude: " + position.coords.latitude + 
+        " Longitude: " + position.coords.longitude;
+}
+</script>
+<! Local Storage >
+<script>
+// Store data
+localStorage.setItem("username", "JohnDoe");
+// Retrieve data
+var user = localStorage.getItem("username");
+</script>
+</body>
+</html>
