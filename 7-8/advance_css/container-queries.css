@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.feature-card h2 {
+    margin-bottom: 20px;
+    color: #1a1a2e;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.feature-card h2 code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* ===== CONTAINER QUERIES ===== */
+.container-queries-demo {
+    container-type: inline-size;
+}
+
+.card-container {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: width 0.3s;
+}
+
+.responsive-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+}
+
+.responsive-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.responsive-card .card-content {
+    flex: 1;
+}
+
+.responsive-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.responsive-card button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Container queries */
+@container (max-width: 400px) {
+    .responsive-card {
+        flex-direction: column;
+    }
+    
+    .responsive-card img {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+@container (min-width: 600px) {
+    .responsive-card {
+        background: linear-gradient(135deg, #667eea20, #764ba220);
+        border-color: #667eea;
+    }
+}
+
+.container-resize {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 8px;
+}
+
+.container-resize p {
+    margin: 0;
+    color: #666;
+}
+
+.container-width-slider {
+    flex: 1;
+}
+
+/* ===== :has() SELECTOR ===== */
+.has-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.has-card {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s;
+}
+
+/* Cards that contain buttons */
+.has-card:has(button) {
+    border-color: #27ae60;
+    background: #d4eddac0;
+}
+
+/* Cards that contain images */
+.has-card:has(img) {
+    border-color: #3498db;
+    background: #c7e6ffc0;
+}
+
+/* Cards that don't contain buttons */
+.has-card:not(:has(button)) {
+    opacity: 0.7;
+}
+
+/* Style button differently when card has an image */
+.has-card:has(img) button {
+    background: #3498db;
+}
+
+.has-card img {
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* ===== SUBGRID ===== */
+.subgrid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.subgrid-item {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    gap: 10px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+}
+
+.subgrid-item h4 {
+    color: #667eea;
+    margin: 0;
+}
+
+.subgrid-item p {
+    margin: 0;
+    color: #666;
+}
+
+.subgrid-item button {
+    justify-self: start;
+    padding: 5px 10px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* ===== NESTING DEMO ===== */
+.nested-nav {
+    background: #2c3e50;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.nested-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nested-nav li {
+    position: relative;
+}
+
+.nested-nav a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+/* Using nesting (supported in modern browsers) */
+.nested-nav {
+    & ul {
+        & li {
+            &:hover {
+                background: #34495e;
+                
+                & > ul {
+                    display: block;
+                }
+            }
+            
+            & ul {
+                display: none;
+                position: absolute;
+                left: 100%;
+                top: 0;
+                background: #34495e;
+                min-width: 150px;
+                border-radius: 4px;
+                
+                & li {
+                    &:hover {
+                        background: #3d566e;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ===== ASPECT RATIO ===== */
+.aspect-demo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.aspect-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.aspect-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+    aspect-ratio: 4 / 3;
+}
+
+.aspect-1-1 {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-3-4 {
+    aspect-ratio: 3 / 4;
+}
+
+/* ===== COLOR MIX & RELATIVE COLORS ===== */
+.color-mix-demo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.color-mix-box {
+    padding: 30px 10px;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.base {
+    background: #3498db;
+}
+
+.mix1 {
+    background: color-mix(in srgb, #3498db 50%, #e74c3c);
+}
+
+.mix2 {
+    background: color-mix(in hsl, #3498db 70%, #2ecc71);
+}
+
+.relative {
+    --base-color: #3498db;
+    background: rgb(from var(--base-color) r calc(g * 1.2) b);
+}
+
+/* ===== SCROLL SNAP ===== */
+.scroll-snap-demo {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.scroll-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    background: #f0f0f0;
+    border-radius: 8px;
+}
+
+.snap-item {
+    flex: 0 0 200px;
+    height: 150px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 8px;
+    scroll-snap-align: center;
+}
+
+/* ===== VIEW TRANSITIONS ===== */
+.view-transition-demo {
+    text-align: center;
+}
+
+.transition-btn {
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.view-container {
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.view-box {
+    padding: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    view-transition-name: demo-box;
+}
+
+.alternate-view .view-box {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    transform: rotate(5deg) scale(0.9);
+}
+
+/* View transition styles */
+::view-transition-old(demo-box) {
+    animation: fadeOut 0.3s ease;
+}
+
+::view-transition-new(demo-box) {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; transform: scale(0.9); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== CASCADE LAYERS ===== */
+@layer base, theme, component, utility;
+
+@layer base {
+    .layer-btn {
+        padding: 8px 16px;
+        border: 2px solid #333;
+        background: #f0f0f0;
+        color: #333;
+        border-radius: 4px;
+    }
+}
+
+@layer theme {
+    .layer-btn {
+        border-color: #667eea;
+        background: white;
+        color: #667eea;
+    }
+}
+
+@layer component {
+    .layer-btn {
+        border-radius: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+@layer utility {
+    .layer-btn {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        cursor: pointer;
+    }
+}
+
+.layers-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.layer-info {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .subgrid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .aspect-demo {
+        grid-template-columns: 1fr;
+    }
+}

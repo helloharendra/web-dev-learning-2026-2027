@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Typography</title>
+    <link rel="stylesheet" href="typography.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Roboto:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="page-title">Advanced Typography</h1>
+
+    <div class="typo-grid">
+        <!-- Variable Fonts Demo -->
+        <div class="typo-card">
+            <h2>Variable Fonts</h2>
+            <div class="variable-font-demo">
+                <p class="variable-text" id="variableText">Variable Fonts</p>
+                <div class="variable-controls">
+                    <label>
+                        Weight: <span id="weightValue">400</span>
+                        <input type="range" min="300" max="900" value="400" id="weightSlider">
+                    </label>
+                    <label>
+                        Width: <span id="widthValue">100</span>%
+                        <input type="range" min="75" max="125" value="100" id="widthSlider">
+                    </label>
+                    <label>
+                        Slant: <span id="slantValue">0</span>
+                        <input type="range" min="0" max="10" value="0" id="slantSlider">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Shadows & Effects -->
+        <div class="typo-card">
+            <h2>Text Shadows</h2>
+            <div class="shadow-demo">
+                <p class="shadow-1">Neon Effect</p>
+                <p class="shadow-2">3D Effect</p>
+                <p class="shadow-3">Fire Effect</p>
+                <p class="shadow-4">Embossed</p>
+                <p class="shadow-5">Long Shadow</p>
+            </div>
+        </div>
+
+        <!-- Gradient Text -->
+        <div class="typo-card">
+            <h2>Gradient Text</h2>
+            <div class="gradient-demo">
+                <p class="gradient-1">Linear Gradient</p>
+                <p class="gradient-2">Radial Gradient</p>
+                <p class="gradient-3">Conic Gradient</p>
+                <p class="gradient-4">Animated Gradient</p>
+                <p class="gradient-5">Multiple Colors</p>
+            </div>
+        </div>
+
+        <!-- Text Stroke & Outline -->
+        <div class="typo-card">
+            <h2>Text Stroke</h2>
+            <div class="stroke-demo">
+                <p class="stroke-1">Thin Stroke</p>
+                <p class="stroke-2">Thick Stroke</p>
+                <p class="stroke-3">Multiple Strokes</p>
+                <p class="stroke-4">Glow Effect</p>
+            </div>
+        </div>
+
+        <!-- Writing Modes -->
+        <div class="typo-card">
+            <h2>Writing Modes</h2>
+            <div class="writing-demo">
+                <p class="horizontal">Horizontal</p>
+                <p class="vertical-rl">Vertical RL</p>
+                <p class="vertical-lr">Vertical LR</p>
+                <p class="sideways">Sideways</p>
+            </div>
+        </div>
+
+        <!-- Text Decoration -->
+        <div class="typo-card">
+            <h2>Advanced Text Decoration</h2>
+            <div class="decoration-demo">
+                <p class="decoration-1">Wavy Underline</p>
+                <p class="decoration-2">Double Underline</p>
+                <p class="decoration-3">Dotted Overline</p>
+                <p class="decoration-4">Colorful Underline</p>
+                <p class="decoration-5">Skip Ink</p>
+            </div>
+        </div>
+
+        <!-- Font Feature Settings -->
+        <div class="typo-card">
+            <h2>Font Features</h2>
+            <div class="features-demo">
+                <p class="ligatures">ffi fl ffl -> ligatures</p>
+                <p class="small-caps">Small Caps</p>
+                <p class="oldstyle-nums">Oldstyle 1234567890</p>
+                <p class="tabular-nums">Tabular 1234567890</p>
+                <p class="fractions">1/2 3/4 5/6 -> fractions</p>
+            </div>
+        </div>
+
+        <!-- Initial Letters -->
+        <div class="typo-card">
+            <h2>Initial Letters</h2>
+            <div class="initial-demo">
+                <p class="dropcap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="raised-cap">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </div>
+
+        <!-- Text Overflow -->
+        <div class="typo-card">
+            <h2>Text Overflow</h2>
+            <div class="overflow-demo">
+                <p class="ellipsis">This is a very long text that will be truncated with ellipsis when it overflows its container</p>
+                <p class="clip">This text will be clipped when it overflows the container bounds</p>
+                <p class="fade-out">This text will fade out at the end using mask-image</p>
+                <div class="line-clamp">
+                    This is a multi-line text that will be clamped to 3 lines using line-clamp property. Any additional content beyond three lines will be truncated and replaced with an ellipsis.
+                </div>
+            </div>
+        </div>
+
+        <!-- Typographic Scale -->
+        <div class="typo-card">
+            <h2>Typographic Scale</h2>
+            <div class="scale-demo">
+                <p style="font-size: var(--step--2)">Minor second (-2)</p>
+                <p style="font-size: var(--step--1)">Minor second (-1)</p>
+                <p style="font-size: var(--step-0)">Base (0)</p>
+                <p style="font-size: var(--step-1)">Step 1</p>
+                <p style="font-size: var(--step-2)">Step 2</p>
+                <p style="font-size: var(--step-3)">Step 3</p>
+                <p style="font-size: var(--step-4)">Step 4</p>
+            </div>
+        </div>
+
+        <!-- Hyphenation & Text Wrap -->
+        <div class="typo-card">
+            <h2>Hyphenation & Wrap</h2>
+            <div class="hyphen-demo">
+                <p class="hyphenated">Supercalifragilisticexpialidocious should be hyphenated when it exceeds the container width in justified text blocks.</p>
+                <p class="balanced">This text uses text-wrap: balance to create evenly distributed lines that look more professional and visually appealing.</p>
+                <p class="pretty">Text-wrap: pretty avoids orphan words at the end of paragraphs for better typography.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variable font controls
+        const variableText = document.getElementById('variableText');
+        const weightSlider = document.getElementById('weightSlider');
+        const widthSlider = document.getElementById('widthSlider');
+        const slantSlider = document.getElementById('slantSlider');
+        
+        const weightValue = document.getElementById('weightValue');
+        const widthValue = document.getElementById('widthValue');
+        const slantValue = document.getElementById('slantValue');
+
+        function updateVariableFont() {
+            const weight = weightSlider.value;
+            const width = widthSlider.value;
+            const slant = slantSlider.value;
+            
+            variableText.style.fontVariationSettings = `'wght' ${weight}, 'wdth' ${width}, 'slnt' ${slant}`;
+            
+            weightValue.textContent = weight;
+            widthValue.textContent = width;
+            slantValue.textContent = slant;
+        }
+
+        weightSlider?.addEventListener('input', updateVariableFont);
+        widthSlider?.addEventListener('input', updateVariableFont);
+        slantSlider?.addEventListener('input', updateVariableFont);
+    </script>
+</body>
+</html>

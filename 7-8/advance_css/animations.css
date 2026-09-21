@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Title Animation */
+.animated-title {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  animation: slideInDown 1s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hover Card Animations */
+.animation-demo {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.animation-demo h2 {
+  margin-bottom: 20px;
+  color: #333;
+  position: relative;
+}
+
+.animation-demo h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  animation: widthPulse 2s infinite;
+}
+
+@keyframes widthPulse {
+  0%,
+  100% {
+    width: 50px;
+  }
+  50% {
+    width: 100px;
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.hover-card {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scale:hover {
+  transform: scale(1.1);
+}
+
+.rotate:hover {
+  transform: rotate(10deg);
+}
+
+.skew:hover {
+  transform: skew(10deg);
+}
+
+.translate:hover {
+  transform: translateY(-10px);
+}
+
+/* Loader Animation */
+.loader-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 200px;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pulse-demo {
+  width: 50px;
+  height: 50px;
+  background-color: #667eea;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+.bounce-demo {
+  width: 50px;
+  height: 50px;
+  background-color: #764ba2;
+  border-radius: 50%;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* 3D Cube */
+.cube-container {
+  perspective: 1000px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate3d 5s infinite linear;
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: rotateX(0) rotateY(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(102, 126, 234, 0.8);
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+
+.front {
+  transform: translateZ(50px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(50px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(50px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(50px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+/* Scroll Animation */
+.scroll-container {
+  max-height: 200px;
+  overflow-y: scroll;
+  padding: 20px;
+  border: 2px solid #667eea;
+  border-radius: 10px;
+}
+
+.scroll-item {
+  padding: 15px;
+  margin: 10px 0;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 5px;
+  animation: slideIn 0.5s ease-out;
+  animation-fill-mode: both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.scroll-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.scroll-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.scroll-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.scroll-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.scroll-item:nth-child(5) {
+  animation-delay: 0.5s;
+}

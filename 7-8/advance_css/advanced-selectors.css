@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Fancy Title */
+.fancy-title {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fancy-title span {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0 20px;
+  border-radius: 100px;
+  font-size: 0.6em;
+  vertical-align: middle;
+}
+
+/* Main Demo Container */
+.selector-demo {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.selector-demo h2 {
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #667eea;
+}
+
+/* ========== ATTRIBUTE SELECTORS ========== */
+
+/* Links starting with https */
+a[href^="https"] {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Links ending with .pdf */
+a[href$=".pdf"] {
+  color: #e74c3c;
+}
+
+/* Links containing "example" */
+a[href*="example"] {
+  text-decoration: underline wavy;
+}
+
+/* Links with target="_blank" */
+a[target="_blank"]::after {
+  content: "";
+  font-size: 0.8em;
+}
+
+/* Input types */
+input[type="text"] {
+  border: 2px solid #3498db;
+}
+
+input[type="email"] {
+  border: 2px solid #2ecc71;
+}
+
+input[type="password"] {
+  border: 2px solid #e74c3c;
+}
+
+input[type="number"] {
+  border: 2px solid #f39c12;
+}
+
+/* Placeholder styling */
+input[placeholder] {
+  padding: 8px;
+  border-radius: 4px;
+}
+
+input[placeholder="Text input"] {
+  background: #ecf0f1;
+}
+
+/* ========== STRUCTURAL PSEUDO-CLASSES ========== */
+
+/* First and last child */
+.styled-list li:first-child {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.styled-list li:last-child {
+  color: #e74c3c;
+  font-style: italic;
+}
+
+/* Nth-child patterns */
+.pattern-list li:nth-child(odd) {
+  background: #f8f9fa;
+  padding: 5px;
+}
+
+.pattern-list li:nth-child(even) {
+  background: #e9ecef;
+  padding: 5px;
+}
+
+.pattern-list li:nth-child(3n + 1) {
+  border-left: 4px solid #3498db;
+}
+
+.pattern-list li:nth-child(3n + 2) {
+  border-left: 4px solid #2ecc71;
+}
+
+.pattern-list li:nth-child(3n + 3) {
+  border-left: 4px solid #e74c3c;
+}
+
+/* Complex patterns */
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.pattern-grid div {
+  background: #667eea;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Select elements after the 2nd */
+.pattern-grid div:nth-child(n + 3) {
+  background: #e74c3c;
+}
+
+/* Select first 3 elements */
+.pattern-grid div:nth-child(-n + 3) {
+  font-weight: bold;
+  border: 2px solid gold;
+}
+
+/* Select every element except first and last */
+.pattern-grid div:not(:first-child):not(:last-child) {
+  opacity: 0.8;
+}
+
+/* ========== EMPTY AND NOT SELECTORS ========== */
+
+.empty-demo .card:empty {
+  display: none;
+}
+
+.empty-demo .card {
+  background: #f8f9fa;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+/* Select items that are not highlighted */
+.not-demo .item:not(.highlight) {
+  background: #ecf0f1;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.not-demo .item.highlight {
+  background: #f1c40f;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.not-demo .item:not(.special) {
+  border-left: 4px solid #3498db;
+}
+
+/* ========== FORM STATE SELECTORS ========== */
+
+.form-demo {
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.form-group label {
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+/* Checked state */
+input:checked {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+
+input:checked + label {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Disabled state */
+input:disabled {
+  background: #ecf0f1;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Enabled state */
+input:enabled {
+  background: white;
+}
+
+/* Readonly state */
+input:read-only {
+  background: #f1f1f1;
+  border-color: #95a5a6;
+}
+
+/* Required and optional */
+input:required {
+  border-left: 4px solid #e74c3c;
+}
+
+input:optional {
+  border-left: 4px solid #3498db;
+}
+
+/* Valid and invalid states */
+input:valid {
+  border-color: #2ecc71;
+}
+
+input:invalid {
+  border-color: #e74c3c;
+}
+
+/* In-range and out-of-range */
+input:in-range {
+  background: #d4edda;
+}
+
+input:out-of-range {
+  background: #f8d7da;
+}
+
+/* Focus states */
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+/* Button states */
+button:enabled {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:enabled:hover {
+  background: #2980b9;
+}
+
+button:enabled:active {
+  transform: translateY(2px);
+}
+
+/* ========== TARGET PSEUDO-CLASS ========== */
+
+.target-links {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.target-links a {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.target-sections {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.target-section {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+.target-section:last-child {
+  border-bottom: none;
+}
+
+/* Target pseudo-class */
+.target-section:target {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  animation: pulse 1s ease;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* ========== LANGUAGE PSEUDO-CLASS ========== */
+
+.lang-demo p {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.lang-demo p:lang(en) {
+  background: #d4edda;
+  border-left: 4px solid #28a745;
+}
+
+.lang-demo p:lang(fr) {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  font-style: italic;
+}
+
+.lang-demo p:lang(de) {
+  background: #d1ecf1;
+  border-left: 4px solid #17a2b8;
+  font-weight: bold;
+}
+
+.lang-demo p:lang(es) {
+  background: #f8d7da;
+  border-left: 4px solid #dc3545;
+  text-decoration: underline;
+}
+
+/* ========== ROOT AND EMPTY ========== */
+
+:root {
+  --primary-color: #667eea;
+  scroll-behavior: smooth;
+}
+
+/* Empty elements */
+p:empty {
+  display: none;
+}
+
+/* Elements that only have a comment */
+.card:empty {
+  position: relative;
+}
+
+.card:empty::before {
+  content: "Empty card (hidden)";
+  color: #999;
+  font-style: italic;
+}

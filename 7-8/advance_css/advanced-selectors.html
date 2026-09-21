@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced CSS Selectors</title>
+    <link rel="stylesheet" href="advanced-selectors.css" />
+  </head>
+  <body>
+    <h1 class="fancy-title">Advanced CSS Selectors <span>Masterclass</span></h1>
+
+    <div class="selector-demo">
+      <h2>Attribute Selectors</h2>
+      <div class="demo-grid">
+        <a href="https://example.com" target="_blank">External Link</a>
+        <a href="/about" target="_self">Internal Link</a>
+        <a href="document.pdf" download>PDF Document</a>
+        <a href="image.jpg" target="_blank">Image File</a>
+        <input type="text" placeholder="Text input" />
+        <input type="email" placeholder="Email input" />
+        <input type="password" placeholder="Password" />
+        <input type="number" placeholder="Number" />
+      </div>
+    </div>
+
+    <div class="selector-demo">
+      <h2>Structural Pseudo-classes</h2>
+      <div class="list-demo">
+        <h3>First and Last</h3>
+        <ul class="styled-list">
+          <li>First child</li>
+          <li>Middle child</li>
+          <li>Last child</li>
+        </ul>
+
+        <h3>Nth-child Patterns</h3>
+        <ul class="pattern-list">
+          <li>Item 1 (odd)</li>
+          <li>Item 2 (even)</li>
+          <li>Item 3 (odd)</li>
+          <li>Item 4 (even)</li>
+          <li>Item 5 (odd)</li>
+          <li>Item 6 (even)</li>
+          <li>Item 7 (odd)</li>
+          <li>Item 8 (even)</li>
+        </ul>
+
+        <h3>Complex Patterns</h3>
+        <div class="pattern-grid">
+          <div>1 (n+3)</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-demo">
+      <h2>Empty and Not Selectors</h2>
+      <div class="empty-demo">
+        <div class="card">Has content</div>
+        <div class="card"></div>
+        <div class="card">Also has content</div>
+        <div class="card"><!-- comment only --></div>
+
+        <div class="not-demo">
+          <div class="item highlight">Highlighted</div>
+          <div class="item">Normal</div>
+          <div class="item special">Special</div>
+          <div class="item">Normal</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-demo">
+      <h2>Form State Selectors</h2>
+      <form class="form-demo">
+        <div class="form-group">
+          <label> <input type="checkbox" checked /> Checked checkbox </label>
+          <label> <input type="checkbox" /> Unchecked checkbox </label>
+        </div>
+
+        <div class="form-group">
+          <label> <input type="radio" name="radio" checked /> Option 1 </label>
+          <label> <input type="radio" name="radio" /> Option 2 </label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" placeholder="Enabled input" />
+          <input type="text" placeholder="Disabled input" disabled />
+          <input
+            type="text"
+            placeholder="Readonly input"
+            readonly
+            value="Can't edit"
+          />
+        </div>
+
+        <div class="form-group">
+          <input type="email" placeholder="Enter email" required />
+          <input type="text" placeholder="Optional field" />
+          <input type="number" min="0" max="10" placeholder="Range 0-10" />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" :enabled>Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="selector-demo">
+      <h2>Target Pseudo-class</h2>
+      <div class="target-demo">
+        <div class="target-links">
+          <a href="#section1">Go to Section 1</a>
+          <a href="#section2">Go to Section 2</a>
+          <a href="#section3">Go to Section 3</a>
+        </div>
+
+        <div class="target-sections">
+          <div id="section1" class="target-section">
+            <h3>Section 1</h3>
+            <p>This section will be highlighted when targeted via URL.</p>
+          </div>
+          <div id="section2" class="target-section">
+            <h3>Section 2</h3>
+            <p>Notice the :target pseudo-class styling.</p>
+          </div>
+          <div id="section3" class="target-section">
+            <h3>Section 3</h3>
+            <p>Click the links above to see it in action!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="selector-demo">
+      <h2>Language Pseudo-class</h2>
+      <div class="lang-demo">
+        <p lang="en">This is English text with specific styling.</p>
+        <p lang="fr">Ceci est un texte français avec un style spécifique.</p>
+        <p lang="de">Dies ist ein deutscher Text mit spezifischem Stil.</p>
+        <p lang="es">Este es un texto en español con estilo específico.</p>
+      </div>
+    </div>
+  </body>
+</html>

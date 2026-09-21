@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Functions Masterclass</title>
+    <link rel="stylesheet" href="css-functions.css">
+</head>
+<body>
+    <h1 class="gradient-title">CSS Functions Deep Dive</h1>
+
+    <div class="functions-grid">
+        <!-- Math Functions -->
+        <div class="function-card">
+            <h2><code>calc()</code> - Math Operations</h2>
+            <div class="calc-demo">
+                <div class="calc-box" style="width: calc(100% - 100px)">100% - 100px</div>
+                <div class="calc-box" style="width: calc(50% + 50px)">50% + 50px</div>
+                <div class="calc-box" style="width: calc(75% - 2em)">75% - 2em</div>
+                <div class="calc-box mixed-units">Mixed units demo</div>
+            </div>
+        </div>
+
+        <!-- min() / max() -->
+        <div class="function-card">
+            <h2><code>min()</code> & <code>max()</code></h2>
+            <div class="minmax-demo">
+                <div class="min-box">min(300px, 50%)</div>
+                <div class="max-box">max(200px, 50%)</div>
+                <div class="clamp-box">clamp(200px, 50%, 400px)</div>
+            </div>
+        </div>
+
+        <!-- CSS Variables with fallback -->
+        <div class="function-card">
+            <h2><code>var()</code> with Fallback</h2>
+            <div class="var-demo">
+                <div style="color: var(--undefined, #e74c3c)">Fallback color</div>
+                <div style="background: var(--theme-primary, linear-gradient(45deg, #667eea, #764ba2))">
+                    Fallback gradient
+                </div>
+            </div>
+        </div>
+
+        <!-- attr() function -->
+        <div class="function-card">
+            <h2><code>attr()</code> - Attribute Reading</h2>
+            <div class="attr-demo">
+                <a href="https://example.com" target="_blank">Hover to see href</a>
+                <div data-tooltip="This is a tooltip!" class="tooltip">Hover me</div>
+                <div class="custom-attr" data-count="5">Count: before</div>
+            </div>
+        </div>
+
+        <!-- Counter Functions -->
+        <div class="function-card">
+            <h2><code>counter()</code> & <code>counters()</code></h2>
+            <div class="counter-demo">
+                <h3>Sections with automatic numbering</h3>
+                <div class="section">Introduction</div>
+                <div class="section">Main Content</div>
+                <div class="subsection">Sub Point 1</div>
+                <div class="subsection">Sub Point 2</div>
+                <div class="section">Conclusion</div>
+            </div>
+        </div>
+
+        <!-- Filter Functions -->
+        <div class="function-card">
+            <h2>Filter Functions</h2>
+            <div class="filter-demo">
+                <img src="https://picsum.photos/100/100?random=1" alt="Sample" class="blur">
+                <img src="https://picsum.photos/100/100?random=2" alt="Sample" class="brightness">
+                <img src="https://picsum.photos/100/100?random=3" alt="Sample" class="contrast">
+                <img src="https://picsum.photos/100/100?random=4" alt="Sample" class="grayscale">
+                <img src="https://picsum.photos/100/100?random=5" alt="Sample" class="sepia">
+                <img src="https://picsum.photos/100/100?random=6" alt="Sample" class="hue-rotate">
+            </div>
+        </div>
+
+        <!-- Color Functions -->
+        <div class="function-card">
+            <h2>Color Functions</h2>
+            <div class="color-demo">
+                <div class="color-box" style="background: rgb(102, 126, 234)">rgb()</div>
+                <div class="color-box" style="background: rgba(102, 126, 234, 0.5)">rgba()</div>
+                <div class="color-box" style="background: hsl(230, 75%, 66%)">hsl()</div>
+                <div class="color-box" style="background: hsla(230, 75%, 66%, 0.5)">hsla()</div>
+                <div class="color-box gradient-box">linear-gradient()</div>
+                <div class="color-box radial-box">radial-gradient()</div>
+            </div>
+        </div>
+
+        <!-- Shape Functions -->
+        <div class="function-card">
+            <h2>Shape Functions</h2>
+            <div class="shape-demo">
+                <div class="circle">circle()</div>
+                <div class="ellipse">ellipse()</div>
+                <div class="polygon">polygon()</div>
+                <div class="inset">inset()</div>
+            </div>
+        </div>
+
+        <!-- Transform Functions -->
+        <div class="function-card">
+            <h2>Transform Functions</h2>
+            <div class="transform-demo">
+                <div class="transform-box rotate">rotate()</div>
+                <div class="transform-box scale">scale()</div>
+                <div class="transform-box skew">skew()</div>
+                <div class="transform-box translate">translate()</div>
+                <div class="transform-box matrix">matrix()</div>
+                <div class="transform-box perspective">perspective()</div>
+            </div>
+        </div>
+
+        <!-- Grid Functions -->
+        <div class="function-card">
+            <h2>Grid Functions</h2>
+            <div class="grid-functions-demo">
+                <div class="grid-with-functions">
+                    <div>repeat()</div>
+                    <div>minmax()</div>
+                    <div>fit-content()</div>
+                    <div>auto-fill</div>
+                    <div>auto-fit</div>
+                    <div>min-content</div>
+                    <div>max-content</div>
+                    <div>auto</div>
+                    <div>fr unit</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cubic-bezier Function -->
+        <div class="function-card">
+            <h2><code>cubic-bezier()</code></h2>
+            <div class="cubic-demo">
+                <div class="ball linear">linear</div>
+                <div class="ball ease">ease</div>
+                <div class="ball ease-in">ease-in</div>
+                <div class="ball ease-out">ease-out</div>
+                <div class="ball ease-in-out">ease-in-out</div>
+                <div class="ball custom">cubic-bezier(0.68, -0.55, 0.265, 1.55)</div>
+            </div>
+        </div>
+
+        <!-- Element() Function -->
+        <div class="function-card">
+            <h2><code>element()</code> (Experimental)</h2>
+            <div class="element-demo">
+                <div id="element-source" class="source-box">
+                    Source Element
+                </div>
+                <div class="reference-box">
+                    Reference (if supported)
+                </div>
+                <p class="note">Note: element() is experimental and limited browser support</p>
+            </div>
+        </div>
+
+        <!-- Environment Variables -->
+        <div class="function-card">
+            <h2>Environment Variables</h2>
+            <div class="env-demo">
+                <div class="safe-area-inset">
+                    env(safe-area-inset-*)
+                </div>
+                <div class="viewport">
+                    vw, vh, vmin, vmax units
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update attr demo dynamically
+        setInterval(() => {
+            const countEl = document.querySelector('.custom-attr');
+            let count = parseInt(countEl.dataset.count || 0);
+            count = (count + 1) % 10;
+            countEl.dataset.count = count;
+        }, 1000);
+    </script>
+</body>
+</html>

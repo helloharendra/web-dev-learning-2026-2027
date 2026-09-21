@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables & Theming</title>
+    <link rel="stylesheet" href="css-variables.css">
+</head>
+<body>
+<div class="theme-switcher">
+<button onclick="document.documentElement.style.setProperty('--primary-color', '#3498db')">Blue Theme</button>
+<button onclick="document.documentElement.style.setProperty('--primary-color', '#e74c3c')">Red Theme</button>
+<button onclick="document.documentElement.style.setProperty('--primary-color', '#2ecc71')">Green Theme</button>
+</div>
+
+    <div class="themed-container">
+        <h1>CSS Variables Demo</h1>
+        <p>This page demonstrates the power of CSS custom properties</p>
+        
+        <div class="card-grid">
+            <div class="themed-card">
+                <h3>Card 1</h3>
+                <p>Using CSS variables for dynamic theming</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="themed-card">
+                <h3>Card 2</h3>
+                <p>Variables cascade through the DOM</p>
+                <button class="btn">Learn More</button>
+            </div>
+            <div class="themed-card">
+                <h3>Card 3</h3>
+                <p>Update variables with JavaScript</p>
+                <button class="btn">Learn More</button>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 75%"></div>
+        </div>
+    </div>
+</body>
+</html>

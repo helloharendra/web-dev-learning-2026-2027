@@ -1,0 +1,294 @@
+:root {
+    /* Base spacing unit */
+    --base-spacing: 8px;
+    
+    /* Spacing scale using calc() */
+    --space-xs: calc(var(--base-spacing) * 0.5);
+    --space-sm: calc(var(--base-spacing) * 1);
+    --space-md: calc(var(--base-spacing) * 2);
+    --space-lg: calc(var(--base-spacing) * 3);
+    --space-xl: calc(var(--base-spacing) * 4);
+    
+    /* Typography scale */
+    --base-font-size: 16px;
+    --font-scale: 1.25;
+    --text-xs: calc(var(--base-font-size) / var(--font-scale));
+    --text-sm: calc(var(--base-font-size));
+    --text-md: calc(var(--base-font-size) * var(--font-scale));
+    --text-lg: calc(var(--text-md) * var(--font-scale));
+    --text-xl: calc(var(--text-lg) * var(--font-scale));
+    
+    /* Default light theme */
+    --primary: #3498db;
+    --secondary: #2ecc71;
+    --accent: #e74c3c;
+    --background: #ffffff;
+    --surface: #f8f9fa;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --border: #e0e0e0;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --primary: #bb86fc;
+    --secondary: #03dac6;
+    --accent: #cf6679;
+    --background: #121212;
+    --surface: #1e1e1e;
+    --text: #ffffff;
+    --text-light: #b0b0b0;
+    --border: #2d2d2d;
+    --shadow: rgba(255, 255, 255, 0.1);
+}
+
+/* Sepia theme */
+[data-theme="sepia"] {
+    --primary: #8b4513;
+    --secondary: #a0522d;
+    --accent: #cd853f;
+    --background: #f4ecd8;
+    --surface: #e8dcc0;
+    --text: #5b3e2b;
+    --text-light: #7d5e3a;
+    --border: #c4a484;
+    --shadow: rgba(139, 69, 19, 0.2);
+}
+
+/* High contrast theme */
+[data-theme="high-contrast"] {
+    --primary: #0000ff;
+    --secondary: #008000;
+    --accent: #ff0000;
+    --background: #000000;
+    --surface: #222222;
+    --text: #ffffff;
+    --text-light: #ffff00;
+    --border: #ffffff;
+    --shadow: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    font-size: var(--base-font-size);
+    line-height: 1.6;
+    padding: var(--space-lg);
+    min-height: 100vh;
+}
+
+/* Theme Controls */
+.theme-controls, .spacing-controls {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.theme-btn {
+    padding: var(--space-sm) var(--space-md);
+    border: 2px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: var(--text-sm);
+    transition: all 0.2s;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.spacing-controls {
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto var(--space-xl);
+}
+
+.spacing-controls label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+}
+
+.spacing-controls input[type="range"] {
+    flex: 1;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* Main Container */
+.prop-demo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.prop-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.prop-header h1 {
+    font-size: var(--text-xl);
+    color: var(--primary);
+    margin-bottom: var(--space-xs);
+}
+
+.badge {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--primary);
+    color: var(--background);
+    border-radius: 100px;
+    font-size: var(--text-xs);
+    margin-left: var(--space-sm);
+    vertical-align: middle;
+}
+
+.prop-header code {
+    background: var(--surface);
+    padding: var(--space-xs);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+/* Grid Layout */
+.prop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.prop-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--space-lg);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.prop-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow);
+}
+
+.card-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-sm);
+}
+
+.color-sample {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-left: var(--space-xs);
+    border: 2px solid var(--border);
+}
+
+.card-actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.prop-btn {
+    padding: var(--space-xs) var(--space-md);
+    border: none;
+    border-radius: 6px;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    flex: 1;
+    transition: filter 0.2s;
+}
+
+.prop-btn.secondary {
+    background: var(--secondary);
+}
+
+.prop-btn.accent {
+    background: var(--accent);
+}
+
+.prop-btn:hover {
+    filter: brightness(1.1);
+}
+
+/* Spacing Demo */
+.spacing-demo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.spacing-box {
+    background: var(--primary);
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    opacity: 0.8;
+    transition: padding 0.3s;
+}
+
+.spacing-box:hover {
+    opacity: 1;
+}
+
+/* Fallback Demo */
+.fallback-demo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.fallback-demo div {
+    padding: var(--space-sm);
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+}
+
+/* Calc Demo */
+.prop-showcase {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--space-lg);
+}
+
+.calc-demo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.calc-box {
+    background: var(--primary);
+    color: white;
+    padding: var(--space-sm);
+    border-radius: 4px;
+    text-align: center;
+    transition: width 0.3s;
+    min-width: 200px;
+    white-space: nowrap;
+}

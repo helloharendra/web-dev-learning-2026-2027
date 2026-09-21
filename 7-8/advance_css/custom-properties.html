@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Custom Properties Deep Dive</title>
+    <link rel="stylesheet" href="custom-properties.css">
+</head>
+<body>
+    <div class="theme-controls">
+        <button class="theme-btn" data-theme="light">🌞 Light</button>
+        <button class="theme-btn" data-theme="dark">🌙 Dark</button>
+        <button class="theme-btn" data-theme="sepia">📜 Sepia</button>
+        <button class="theme-btn" data-theme="high-contrast">👁️ High Contrast</button>
+    </div>
+
+    <div class="spacing-controls">
+        <label>
+            Spacing Scale:
+            <input type="range" min="4" max="16" value="8" id="spacing-slider">
+        </label>
+        <label>
+            Base Font Size:
+            <input type="range" min="12" max="24" value="16" id="font-slider">
+        </label>
+    </div>
+
+    <div class="prop-demo-container">
+        <header class="prop-header">
+            <h1>CSS Custom Properties <span class="badge">Advanced</span></h1>
+            <p>Dynamic theming with <code>var()</code> and JavaScript</p>
+        </header>
+
+        <div class="prop-grid">
+            <div class="prop-card">
+                <div class="card-icon">🎨</div>
+                <h3>Color Schemes</h3>
+                <p>Primary: <span class="color-sample" style="background: var(--primary)"></span></p>
+                <p>Secondary: <span class="color-sample" style="background: var(--secondary)"></span></p>
+                <p>Accent: <span class="color-sample" style="background: var(--accent)"></span></p>
+                <div class="card-actions">
+                    <button class="prop-btn">Primary</button>
+                    <button class="prop-btn secondary">Secondary</button>
+                    <button class="prop-btn accent">Accent</button>
+                </div>
+            </div>
+
+            <div class="prop-card">
+                <div class="card-icon">📏</div>
+                <h3>Spacing Scale</h3>
+                <div class="spacing-demo">
+                    <div class="spacing-box" style="padding: var(--space-xs)">XS</div>
+                    <div class="spacing-box" style="padding: var(--space-sm)">SM</div>
+                    <div class="spacing-box" style="padding: var(--space-md)">MD</div>
+                    <div class="spacing-box" style="padding: var(--space-lg)">LG</div>
+                    <div class="spacing-box" style="padding: var(--space-xl)">XL</div>
+                </div>
+            </div>
+
+            <div class="prop-card">
+                <div class="card-icon">🔄</div>
+                <h3>Fallback Values</h3>
+                <div class="fallback-demo">
+                    <div style="background: var(--undefined-color, red)">Fallback to red</div>
+                    <div style="background: var(--undefined-color, var(--primary, blue))">Nested Fallback</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="prop-showcase">
+            <h2>Dynamic Calculations with <code>calc()</code></h2>
+            <div class="calc-demo">
+                <div class="calc-box" style="width: calc(var(--spacing-factor, 1) * 100px)">
+                    Width = spacing-factor × 100px
+                </div>
+                <div class="calc-box" style="width: calc(100% - var(--spacing-lg))">
+                    100% - var(--spacing-lg)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme switching
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                document.documentElement.setAttribute('data-theme', theme);
+            });
+        });
+
+        // Dynamic spacing
+        document.getElementById('spacing-slider').addEventListener('input', (e) => {
+            const value = e.target.value;
+            document.documentElement.style.setProperty('--base-spacing', value + 'px');
+        });
+
+        // Dynamic font size
+        document.getElementById('font-slider').addEventListener('input', (e) => {
+            const value = e.target.value;
+            document.documentElement.style.setProperty('--base-font-size', value + 'px');
+        });
+    </script>
+</body>
+</html>

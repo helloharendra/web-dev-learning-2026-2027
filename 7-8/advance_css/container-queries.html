@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Container Queries & Modern Features</title>
+    <link rel="stylesheet" href="container-queries.css">
+</head>
+<body>
+    <h1>Modern CSS Features</h1>
+
+    <div class="feature-grid">
+        <!-- Container Queries Demo -->
+        <div class="feature-card">
+            <h2>Container Queries</h2>
+            <div class="container-queries-demo">
+                <div class="card-container">
+                    <div class="responsive-card">
+                        <img src="https://picsum.photos/200/150?random=1" alt="Demo">
+                        <div class="card-content">
+                            <h3>Card Title</h3>
+                            <p>This card changes based on container width!</p>
+                            <button>Learn More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container-resize">
+                    <p>Resize me →</p>
+                    <input type="range" min="200" max="600" value="400" class="container-width-slider">
+                </div>
+            </div>
+        </div>
+
+        <!-- :has() Selector Demo -->
+        <div class="feature-card">
+            <h2><code>:has()</code> Parent Selector</h2>
+            <div class="has-demo">
+                <div class="has-card">
+                    <h3>Card with button</h3>
+                    <p>This card has a button</p>
+                    <button>Action</button>
+                </div>
+                
+                <div class="has-card">
+                    <h3>Card without button</h3>
+                    <p>This card has no button</p>
+                </div>
+                
+                <div class="has-card">
+                    <h3>Card with image</h3>
+                    <img src="https://picsum.photos/50/50?random=2" alt="Icon">
+                    <p>Has an image</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subgrid Demo -->
+        <div class="feature-card">
+            <h2>Subgrid</h2>
+            <div class="subgrid-demo">
+                <div class="subgrid-container">
+                    <div class="subgrid-item">
+                        <h4>Header 1</h4>
+                        <p>Content that might be longer or shorter, but subgrid ensures alignment</p>
+                        <button>Read</button>
+                    </div>
+                    <div class="subgrid-item">
+                        <h4>Header 2</h4>
+                        <p>Short content</p>
+                        <button>Read more</button>
+                    </div>
+                    <div class="subgrid-item">
+                        <h4>Header 3</h4>
+                        <p>Medium length content here</p>
+                        <button>Read full article</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nesting Demo -->
+        <div class="feature-card">
+            <h2>CSS Nesting</h2>
+            <div class="nesting-demo">
+                <nav class="nested-nav">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a>
+                            <ul>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">History</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Aspect Ratio Demo -->
+        <div class="feature-card">
+            <h2>Aspect Ratio</h2>
+            <div class="aspect-demo">
+                <div class="aspect-box aspect-16-9">16:9</div>
+                <div class="aspect-box aspect-4-3">4:3</div>
+                <div class="aspect-box aspect-1-1">1:1</div>
+                <div class="aspect-box aspect-3-4">3:4</div>
+            </div>
+        </div>
+
+        <!-- Color Mix & Relative Colors -->
+        <div class="feature-card">
+            <h2>Color Functions</h2>
+            <div class="color-mix-demo">
+                <div class="color-mix-box base">Base</div>
+                <div class="color-mix-box mix1">color-mix</div>
+                <div class="color-mix-box mix2">color-mix</div>
+                <div class="color-mix-box relative">relative color</div>
+            </div>
+        </div>
+
+        <!-- Scroll Snap -->
+        <div class="feature-card">
+            <h2>Scroll Snap</h2>
+            <div class="scroll-snap-demo">
+                <div class="scroll-container">
+                    <div class="snap-item">1</div>
+                    <div class="snap-item">2</div>
+                    <div class="snap-item">3</div>
+                    <div class="snap-item">4</div>
+                    <div class="snap-item">5</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Transitions -->
+        <div class="feature-card">
+            <h2>View Transitions</h2>
+            <div class="view-transition-demo">
+                <button onclick="toggleView()" class="transition-btn">
+                    Toggle View
+                </button>
+                <div class="view-container" id="viewContainer">
+                    <div class="view-box">Content</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cascade Layers -->
+        <div class="feature-card">
+            <h2>Cascade Layers</h2>
+            <div class="layers-demo">
+                <button class="layer-btn base">Base Layer</button>
+                <button class="layer-btn theme">Theme Layer</button>
+                <button class="layer-btn component">Component Layer</button>
+                <button class="layer-btn utility">Utility Layer</button>
+            </div>
+            <p class="layer-info">Check the CSS to see cascade layers in action!</p>
+        </div>
+    </div>
+
+    <script>
+        // Container query slider
+        document.querySelector('.container-width-slider')?.addEventListener('input', (e) => {
+            document.querySelector('.card-container').style.width = e.target.value + 'px';
+        });
+
+        // View transitions demo
+        function toggleView() {
+            const container = document.getElementById('viewContainer');
+            if (document.startViewTransition) {
+                document.startViewTransition(() => {
+                    container.classList.toggle('alternate-view');
+                });
+            } else {
+                container.classList.toggle('alternate-view');
+            }
+        }
+    </script>
+</body>
+</html>
