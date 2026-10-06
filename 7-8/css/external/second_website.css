@@ -1,0 +1,139 @@
+body{
+    background-color: aliceblue;
+}
+    h1{
+        color: rgb(0, 0, 134);
+    }
+    p{
+        color: black;
+    }
+a:hover{
+    background-color: brown;
+}
+a{
+text-decoration:none; color: aliceblue; padding: 20px
+}
+nav{
+    background-color: blue;  padding: 20px;
+}
+.about{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 50px;
+}
+.about-image{
+    width: 40%;
+}
+
+.about-image img{
+    width: 500px;
+    height: 500px;
+border-radius: 300px;
+
+}
+
+.about-text{
+    width:50%;
+}
+
+.about-text h2{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.about-text p{
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+.course-heading{
+    text-align: center;
+}
+.course-row{
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    background-color: bisque;
+    border-radius: 10px;
+}
+.course-card{
+   flex: 1;
+   padding: 10px;
+   border: 1px;
+   border-radius: 8px;
+}
+.course-card img{
+   flex: 1;
+   border-radius: 20px;
+   height: 200;
+
+}
+
+
+.contact_us{
+    margin: 100px;
+    padding: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-left: 200px;
+    padding-right: 200px;
+    background-color: antiquewhite;
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    
+
+}
+
+.contact_us label{
+    display: flex;
+    color: blue;
+    font-weight: bold;
+    font-size: 20;
+
+    
+}
+
+
+.contact_us input{
+   border-radius: 10px;
+   height: 30px;
+   width: 300px;
+   display: flex;
+    
+}
+
+
+.contact_us input{
+   border-radius: 10px;
+   height: 30px;
+   width: 300px;
+   display: flex;
+    
+}
+
+
+.contact_us textarea{
+    height: 150px;
+    width: 300;
+
+}
+
+
+.contact_us button{
+
+    background-color: blue;
+color: aliceblue;
+height: 35px;
+width: 100px;
+border-radius: 10px;
+
+}
+
+.contact_us button:hover{
+    background-color: darkgrey;
+    color: blue;
+
+}
