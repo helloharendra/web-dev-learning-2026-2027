@@ -1,82 +1,400 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Naya Prayog</title>
-<link rel="stylesheet" href="/css/external/second_website.css">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Naya Prayog</title>
+
+    <link rel="stylesheet" href="/css/external/second_website.css">
 </head>
+
 <body>
-<div>
-<header>
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#courses">Contact</a>
-</nav>
-</header>
-</div>
 
-<section id="home">
-<img src="/images/carousel.png"; alt="" srcset="" width="100%">
-</section>
-<section id="about" class="about">
-<div class="about-image">
-<img src="/images/harendra.png" alt="">
-</div>
-<div class="about-text">
-<h2>About</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nostrum officiis hic inventore ab ipsa earum quas nobis minima, illo consequatur perspiciatis similique at voluptas magnam aut accusantium aspernatur maxime.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error officiis illo sunt corrupti, libero incidunt soluta debitis molestiae, sapiente et accusamus exercitationem doloribus eum laboriosam perferendis tenetur distinctio adipisci accusantium.</p>
-<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum necessitatibus officiis nesciunt nostrum fugiat ab accusantium pariatur, placeat reprehenderit minus neque sunt sint facilis expedita voluptas laborum nam eum. Vitae!</p>
-</div>
-</section>
+  <header>
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#courses">Courses</a>
+
+            <a href="#contact_us">Contact</a>
+
+            <a href="#more">More</a>
+
+        </nav>
+    </header>
 
 
-<section id="courses">
-<div class="courses-text">
-<h2 class="course-heading"><span style="color: blue;">Our</span> <span style="color: red;">Courses</span></h2>
-<h2 class="course-heading"> Choose<span style="color: red;">Excellence</span>  at <span style="color: blue;">Naya Prayog</span></h2>
-</div>
-<div class="course-row">
-  <div class="course-card">
-<img src="/images/img1.jpeg" alt="">
-</div>
- <div class="course-card">
-<img src="/images/img1.jpeg" alt="">
-</div>
- <div class="course-card">
-<img src="/images/img1.jpeg" alt="">
-</div>
- <div class="course-card">
-<img src="/images/img1.jpeg" alt="">
-</div>
- <div class="course-card">
-<img src="/images/img1.jpeg" alt="">
-</div>
-</div>
-</section>
+    <section id="home">
+
+        <img 
+            src="/images/carousel.png" 
+            alt="Naya Prayog"
+            class="hero-image"
+        >
+
+    </section>
+
+    <section id="about" class="about">
+
+        <div class="about-image">
+
+            <img 
+                src="/images/harendra.png" 
+                alt="Harendra Prajapati"
+            >
+        </div>
+        <div class="about-text">
+
+            <h2>About</h2>
+
+            <p>
+                Naya Prayog is committed to providing quality
+                technology education and practical learning
+                opportunities for students and professionals.
+            </p>
+
+            <p>
+                Our goal is to help learners develop practical
+                technical skills through real-world projects,
+                hands-on training, and industry-oriented courses.
+            </p>
+
+            <p>
+                We believe in learning by doing and continuously
+                improving our skills to meet the requirements of
+                the modern technology industry.
+            </p>
+
+        </div>
+
+    </section>
 
 
+    <!-- =========================
+         COURSES SECTION
+    ========================== -->
 
-<section id="contact_us" class="contact_us">
+    <section id="courses" class="courses">
+
+        <div class="courses-text">
+
+            <h2 class="course-heading">
+                <span class="blue-text">Our</span>
+                <span class="red-text">Courses</span>
+            </h2>
+
+            <h2 class="course-heading">
+                Choose
+                <span class="red-text">Excellence</span>
+                at
+                <span class="blue-text">Naya Prayog</span>
+            </h2>
+
+        </div>
 
 
-<form action="">
+        <div class="course-row">
 
-<fieldset>
-<legend>  <h2 class="course-heading"><span style="color: blue;">Contact</span> <span style="color: red;">US</span></h2>
-</legend>
-<label for="name">Your Name</label> <input type="text" required>
-<label for="email">Email</label> <input type="email" required> <br> <br>
+            <!-- Course 1 -->
+            <div class="course-card">
 
-<label for="mob">Mob.</label> <input type="number" required> <br><br>
+                <img 
+                    src="/images/img1.jpeg" 
+                    alt="Full Stack Web Development"
+                >
+
+                <h3>Full Stack Web Development</h3>
+
+                <p>
+                    Learn modern web development and build
+                    real-world applications.
+                </p>
+
+            </div>
 
 
-<label for="query">Query</label><textarea name="query" id="query" maxlength="500" minlength="10">Enter Your Query Here </textarea> <br><br>
+            <!-- Course 2 -->
+            <div class="course-card">
+
+                <img 
+                    src="/images/img1.jpeg" 
+                    alt="Full Stack App Development"
+                >
+
+                <h3>Full Stack App Development</h3>
+
+                <p>
+                    Learn application development and create
+                    powerful mobile applications.
+                </p>
+
+            </div>
 
 
-<button type="submit" class="btn">Submit</button>
+            <!-- Course 3 -->
+            <div class="course-card">
 
-</fieldset>
-</form>
-</section>
+                <img 
+                    src="/images/img1.jpeg" 
+                    alt="Data Analytics"
+                >
+
+                <h3>Data Analytics</h3>
+
+                <p>
+                    Learn Excel, SQL, Python and data visualization
+                    for a career in analytics.
+                </p>
+
+            </div>
+
+
+            <!-- Course 4 -->
+            <div class="course-card">
+
+                <img 
+                    src="/images/img1.jpeg" 
+                    alt="Data Science"
+                >
+
+                <h3>Data Science</h3>
+
+                <p>
+                    Learn data science concepts and solve
+                    real-world problems using Python.
+                </p>
+
+            </div>
+
+
+            <!-- Course 5 -->
+            <div class="course-card">
+
+                <img 
+                    src="/images/img1.jpeg" 
+                    alt="Artificial Intelligence"
+                >
+
+                <h3>AI & Machine Learning</h3>
+
+                <p>
+                    Explore artificial intelligence and
+                    machine learning technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================== -->
+
+    <section id="contact_us" class="contact_us">
+
+        <form action="" method="post">
+
+            <fieldset>
+
+                <legend>
+
+                    <h2 class="course-heading">
+
+                        <span class="blue-text">
+                            Contact
+                        </span>
+
+                        <span class="red-text">
+                            Us
+                        </span>
+
+                    </h2>
+
+                </legend>
+
+
+                <!-- Name -->
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <!-- Email -->
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <!-- Mobile -->
+
+                <label for="mob">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="mob"
+                    name="mob"
+                    placeholder="Enter your mobile number"
+                    required
+                >
+
+
+                <!-- Query -->
+
+                <label for="query">
+                    Your Query
+                </label>
+
+                <textarea
+                    name="query"
+                    id="query"
+                    maxlength="500"
+                    minlength="10"
+                    placeholder="Enter your query here..."
+                    required
+                ></textarea>
+
+
+                <!-- Submit -->
+
+                <button type="submit" class="btn">
+                    Submit
+                </button>
+
+            </fieldset>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <section id="more" class="more">
+
+        <footer class="footer">
+
+
+            <!-- COLUMN 1 -->
+
+            <div class="footer-column">
+
+                <h3>Company</h3>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#contact_us">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- COLUMN 2 -->
+
+            <div class="footer-column">
+
+                <h3>Services</h3>
+
+                <a href="#">
+                    Web Development
+                </a>
+
+                <a href="#">
+                    App Development
+                </a>
+
+                <a href="#">
+                    Software Development
+                </a>
+
+                <a href="#">
+                    AI & Machine Learning
+                </a>
+
+            </div>
+
+
+            <!-- COLUMN 3 -->
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#contact_us">
+                    Contact Us
+                </a>
+
+                <a href="#">
+                    Blog
+                </a>
+
+            </div>
+
+        </footer>
+
+
+        <!-- Copyright -->
+
+        <div class="copyright">
+
+            <p>
+                © 2026 Naya Prayog. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </section>
+
+
 </body>
+
 </html>
