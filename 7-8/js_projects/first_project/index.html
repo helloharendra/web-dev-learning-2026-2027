@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="calculator">
+
+    <div class="screen">
+        <div id="expression" class="expression"></div>
+        <div id="display" class="display" aria-live="polite">0</div>
+    </div>
+
+    <div class="buttons">
+        <button class="btn-action" onclick="clearAll()">AC</button>
+        <button class="btn-action" onclick="deleteLast()">DEL</button>
+        <button class="btn-action" onclick="pressPercent()">%</button>
+        <button class="btn-operator" onclick="pressOperator('/')" aria-label="Divide">÷</button>
+
+        <button onclick="pressNumber('7')">7</button>
+        <button onclick="pressNumber('8')">8</button>
+        <button onclick="pressNumber('9')">9</button>
+        <button class="btn-operator" onclick="pressOperator('*')" aria-label="Multiply">×</button>
+
+        <button onclick="pressNumber('4')">4</button>
+        <button onclick="pressNumber('5')">5</button>
+        <button onclick="pressNumber('6')">6</button>
+        <button class="btn-operator" onclick="pressOperator('-')" aria-label="Subtract">−</button>
+
+        <button onclick="pressNumber('1')">1</button>
+        <button onclick="pressNumber('2')">2</button>
+        <button onclick="pressNumber('3')">3</button>
+        <button class="btn-operator" onclick="pressOperator('+')" aria-label="Add">+</button>
+
+        <button class="btn-zero" onclick="pressNumber('0')">0</button>
+        <button onclick="pressDot()" aria-label="Decimal point">.</button>
+        <button class="btn-equals" onclick="pressEquals()">=</button>
+    </div>
+
+</div>
+
+<!-- Script is at the end of body so the display elements already exist when it runs -->
+<script src="script.js"></script>
+
+</body>
+</html>
