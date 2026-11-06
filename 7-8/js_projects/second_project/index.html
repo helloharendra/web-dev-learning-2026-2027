@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Happy Diwali & Dhanteras | Naya Prayog</title>
+  <meta name="description" content="A 3D festive greeting with Lakshmi and Ganesha, glowing diyas and fireworks. Happy Diwali and Happy Dhanteras from Naya Prayog.">
+  <meta name="theme-color" content="#12040c">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- The 3D scene is drawn on this canvas by script.js -->
+  <canvas id="scene" aria-label="Golden idols of Lakshmi and Ganesha surrounded by glowing diyas, with fireworks in the night sky"></canvas>
+
+  <!-- Loading screen -->
+  <div id="loader" role="status">
+    <div class="loader-diya" aria-hidden="true"><span></span></div>
+    <p class="loader-text">दीप प्रज्वलित हो रहे हैं</p>
+    <p class="loader-sub">Lighting the diyas…</p>
+  </div>
+
+  <!-- Greeting -->
+  <main class="greeting">
+    <p class="eyebrow">
+      <span class="eyebrow-line" aria-hidden="true"></span>
+      Naya Prayog wishes you
+      <span class="eyebrow-line" aria-hidden="true"></span>
+    </p>
+    <p class="hindi">शुभ दीपावली</p>
+    <h1>Happy Diwali</h1>
+    <p class="dhanteras"><span>&amp;</span> Happy Dhanteras</p>
+  </main>
+
+  <!-- Blessing, signature and buttons -->
+  <footer class="dock">
+    <p class="blessing">May Maa Lakshmi fill your home with prosperity, and Shri Ganesh clear every obstacle from your path.</p>
+
+    <div class="dock-row">
+      <div class="signature">
+        <span class="signature-from">With light &amp; love from</span>
+        <strong>Naya Prayog</strong>
+        <span class="signature-tag">नया प्रयोग, नई सोच, बेहतर कल</span>
+      </div>
+
+      <div class="actions">
+        <button id="blessBtn" class="btn btn-gold" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2 3.6 5 5.6 5 9.4A5 5 0 0 1 12 16.5a5 5 0 0 1-5-5.1C7 7.6 10 5.600 12 2Z"/><path d="M4 18.500c2.300 2.300 13.700 2.300 16 0-.8 2-3.800 3.500-8 3.500s-7.200-1.500-8-3.500Z"/></svg>
+          Shower Blessings
+        </button>
+        <button id="shareBtn" class="btn btn-ghost" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7.500 7.500 12 3l4.500 4.500M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Share Wish
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <p id="fatal" hidden>This greeting needs WebGL and an internet connection to load its 3D library. Please open it in an up-to-date browser.</p>
+
+  <!-- Three.js r147 is the last version line with these plain (non-module) scripts,
+       so the page also works when you just double-click index.html. -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/shaders/CopyShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/EffectComposer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/RenderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/ShaderPass.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
